@@ -53,9 +53,6 @@ Represents time in minutes since the game started.
 | Type | `integer` |
 | Valid range | `0` to `90` |
 
-```sql
-create domain GameTime as integer check (value between 0 and 90);
-```
 
 #### `CardColour`
 
@@ -66,9 +63,6 @@ Represents the type of disciplinary card issued to a player.
 | Type | `varchar(6)` |
 | Valid values | `red`, `yellow` |
 
-```sql
-create domain CardColour as varchar(6) check (value in ('red','yellow'));
-```
 
 ## Table Details
 
@@ -82,14 +76,6 @@ Stores where and when each international match was played.
 | `city` | `varchar(50)` | City where the match was played |
 | `played_on` | `date` | Date when the match was played |
 
-```sql
-create table Matches (
-    id          integer,
-    city        varchar(50) not null,
-    played_on   date not null,
-    primary key (id)
-);
-```
 
 ### `Teams`
 
@@ -100,13 +86,6 @@ Stores the national sides that take part in matches.
 | `id` | `integer` | Unique team identifier and primary key |
 | `country` | `varchar(50)` | Country represented by the team; must be unique |
 
-```sql
-create table Teams (
-    id          integer,
-    country     varchar(50) unique not null,
-    primary key (id)
-);
-```
 
 ### `Involves`
 
@@ -124,16 +103,6 @@ Represents the relationship between matches and teams. Each match should involve
 | Foreign key | `match` references `Matches(id)` |
 | Foreign key | `team` references `Teams(id)` |
 
-```sql
-create table Involves (
-    match   integer     not null,
-    team    integer     not null,
-    is_home boolean     not null,
-    primary key (match, team),
-    foreign key (match) references Matches(id),
-    foreign key (team)  references Teams(id)
-);
-```
 
 ### `Players`
 
@@ -152,17 +121,6 @@ Stores personal and football-related details about players.
 | Primary key | `id` |
 | Foreign key | `member_of` references `Teams(id)` |
 
-```sql
-create table Players (
-    id          integer,
-    name        varchar(50) not null,
-    birthday    date,
-    member_of   integer not null,
-    position    varchar(20) not null,
-    primary key (id),
-    foreign key (member_of) references Teams(id)
-);
-```
 
 ### `Goals`
 
@@ -182,18 +140,6 @@ Records goals scored during matches.
 | Foreign key | `scored_in` references `Matches(id)` |
 | Foreign key | `scored_by` references `Players(id)` |
 
-```sql
-create table Goals (
-    id           integer,
-    scored_in    integer not null,
-    scored_by    integer not null,
-    time_scored  GameTime not null,
-    rating       varchar(20),
-    primary key (id),
-    foreign key (scored_in) references Matches(id),
-    foreign key (scored_by) references Players(id)
-);
-```
 
 ### `Cards`
 
@@ -213,18 +159,6 @@ Records disciplinary cards issued to players during matches.
 | Foreign key | `given_in` references `Matches(id)` |
 | Foreign key | `given_to` references `Players(id)` |
 
-```sql
-create table Cards (
-    id          integer,
-    given_in    integer not null,
-    given_to    integer not null,
-    time_given  GameTime not null,
-    card_type   CardColour not null,
-    primary key (id),
-    foreign key (given_in) references Matches(id),
-    foreign key (given_to) references Players(id)
-);
-```
 
 ## Relationship Overview
 
