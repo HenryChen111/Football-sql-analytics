@@ -1,5 +1,6 @@
 # Q8: Player Search
 
+```text
                        q8                       
 ------------------------------------------------
  Hans Linke | Germany | forward | 5 | 1
@@ -37,3 +38,4 @@
  Yi Liu | China | goalkeeper | 0 | 0
 (33 rows)
 
+```

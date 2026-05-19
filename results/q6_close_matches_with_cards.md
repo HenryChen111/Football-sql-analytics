@@ -1,5 +1,6 @@
 # Q6: Close Matches With Cards
 
+```text
  match_id | score | yellow | red 
 ----------+-------+--------+-----
       147 | 0-1   |      1 |   1
@@ -11,3 +12,4 @@
       470 | 1-0   |      1 |   1
 (7 rows)
 
+```

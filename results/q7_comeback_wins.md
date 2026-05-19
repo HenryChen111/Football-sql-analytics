@@ -1,5 +1,6 @@
 # Q7: Comeback Wins
 
+```text
  match_id | winning_team | halftime_score | fulltime_score 
 ----------+--------------+----------------+----------------
       185 | England      | 0-1            | 2-1
@@ -13,3 +14,4 @@
       475 | Brazil       | 0-1            | 2-1
 (9 rows)
 
+```

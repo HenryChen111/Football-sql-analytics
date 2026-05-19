@@ -1,5 +1,6 @@
 # Q3: Players With Six or More Goals
 
+```text
  player_id |      player      | goals_scored | first_goal_date 
 -----------+------------------+--------------+-----------------
        342 | Jung-Hwan Kim    |            8 | 2000-04-21
@@ -13,3 +14,4 @@
        434 | Pedro Navarro    |            6 | 2000-01-02
 (9 rows)
 
+```

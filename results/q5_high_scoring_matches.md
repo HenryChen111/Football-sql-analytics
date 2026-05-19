@@ -1,5 +1,6 @@
 # Q5: High Scoring Matches
 
+```text
  match_id |  home_team  | away_team | goals_for_each_team 
 ----------+-------------+-----------+---------------------
       106 | Japan       | Spain     | 1-4
@@ -23,3 +24,4 @@
       499 | England     | Brazil    | 1-4
 (19 rows)
 
+```

@@ -1,5 +1,6 @@
 # Q4: Player Discipline Scores
 
+```text
  player_id |      player      | yellow_cards | red_cards | discipline_score 
 -----------+------------------+--------------+-----------+------------------
         47 | Bruce Brown      |            1 |         1 |                7
@@ -13,3 +14,4 @@
        152 | Robert Wilson    |            2 |         0 |                4
 (9 rows)
 
+```

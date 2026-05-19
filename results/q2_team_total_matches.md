@@ -1,5 +1,6 @@
 # Q2: Teams With At Least Five Matches
 
+```text
  team |   country   | total_matches 
 ------+-------------+---------------
    14 | Sweden      |            67
@@ -19,3 +20,4 @@
     8 | Italy       |            38
 (15 rows)
 
+```
